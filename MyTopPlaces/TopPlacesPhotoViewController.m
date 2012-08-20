@@ -142,6 +142,8 @@ if ([self.photo objectForKey:@"imageURL"]){
                                                permittedArrowDirections:UIPopoverArrowDirectionAny
                                                                animated:YES];
             } else {                  //iPhone
+                [pvtvc setVacations:self.vacations];
+                [pvtvc setDelegate:self];
                 [self.navigationController pushViewController:pvtvc animated:YES];
             }
         } else {

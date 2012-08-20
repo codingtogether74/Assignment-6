@@ -643,6 +643,45 @@
             </objects>
             <point key="canvasLocation" x="381" y="1951"/>
         </scene>
+        <!--Popover Vacations Table View Controller - Vacations-->
+        <scene sceneID="WoO-YM-Wg5">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dld-Lq-Osl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController storyboardIdentifier="ListOfVacations" title="Vacations" id="aLf-IO-QjA" customClass="PopoverVacationsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zuI-Ne-k8b">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Visit Vacations Cell" textLabel="f11-vr-2BG" style="IBUITableViewCellStyleDefault" id="s04-sY-M7S">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f11-vr-2BG">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="aLf-IO-QjA" id="PbT-I3-ae9"/>
+                            <outlet property="delegate" destination="aLf-IO-QjA" id="g2U-KT-EDL"/>
+                        </connections>
+                    </tableView>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="2071" y="-261"/>
+        </scene>
     </scenes>
     <resources>
         <image name="07-map-marker.png" width="16" height="26"/>
@@ -678,6 +717,9 @@
                 <relationship kind="outlet" name="mapButton" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>
+        <class className="PopoverVacationsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PopoverVacationsTableViewController.h"/>
+        </class>
         <class className="RecentsTableViewController" superclassName="PhotoTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentsTableViewController.h"/>
             <relationships>
@@ -690,7 +732,6 @@
         <class className="TagsTableViewController" superclassName="CoreDataTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TagsTableViewController.h"/>
             <relationships>
-                <relationship kind="action" name="searchButtonPressed:"/>
                 <relationship kind="outlet" name="searchButton" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>
