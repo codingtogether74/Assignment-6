@@ -157,21 +157,6 @@ if ([self.photo objectForKey:@"imageURL"]){
 
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"Show Visit Vacations"]) {
-        // this if statement added after lecture to prevent multiple popovers
-        // appearing if the user keeps touching the Favorites button over and over
-        // simply remove the last one we put up each time we segue to a new one
-        if ([segue isKindOfClass:[UIStoryboardPopoverSegue class]]) {
-            UIStoryboardPopoverSegue *popoverSegue = (UIStoryboardPopoverSegue *)segue;
-            [self.popoverController dismissPopoverAnimated:YES];
-            self.popoverController = popoverSegue.popoverController; // might want to be popover's delegate and self.popoverController = nil on dismiss?
-        }
-        [segue.destinationViewController setVacations:self.vacations];
-        [segue.destinationViewController setDelegate:self];
-    }
-}
 
 -(void)PopoverVacationsTableViewController :(PopoverVacationsTableViewController *)sender
                               choseVacation:(NSString *)vacation;
